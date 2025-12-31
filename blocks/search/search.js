@@ -83,7 +83,6 @@ export default function decorate(block) {
   block.appendChild(wrapper);
 
   // Search state
-  let isOpen = false;
   let currentFocus = -1;
   let searchResults = [];
 
@@ -104,9 +103,24 @@ export default function decorate(block) {
 
       return filtered.slice(0, 5); // Limit to 5 results
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Search failed:', error);
       return [];
     }
+  };
+
+  // Update focus styling
+  const updateFocus = () => {
+    const items = resultsBox.querySelectorAll('[role="option"]:not([aria-disabled="true"])');
+    items.forEach((item, index) => {
+      if (index === currentFocus) {
+        item.setAttribute('aria-selected', 'true');
+        item.classList.add('focused');
+      } else {
+        item.removeAttribute('aria-selected');
+        item.classList.remove('focused');
+      }
+    });
   };
 
   // Display search results
@@ -155,23 +169,8 @@ export default function decorate(block) {
     textInput.setAttribute('aria-expanded', 'true');
   };
 
-  // Update focus styling
-  const updateFocus = () => {
-    const items = resultsBox.querySelectorAll('[role="option"]:not([aria-disabled="true"])');
-    items.forEach((item, index) => {
-      if (index === currentFocus) {
-        item.setAttribute('aria-selected', 'true');
-        item.classList.add('focused');
-      } else {
-        item.removeAttribute('aria-selected');
-        item.classList.remove('focused');
-      }
-    });
-  };
-
   // Open search function
   const openSearch = () => {
-    isOpen = true;
     wrapper.classList.add('c-autocompletesearch--focus');
     searchBar.classList.add('sc-autocompletesearchbar--open', 'sc-autocompletesearchbar--focus');
     openButton.style.display = 'none';
@@ -186,7 +185,6 @@ export default function decorate(block) {
 
   // Close search function
   const closeSearch = () => {
-    isOpen = false;
     wrapper.classList.remove('c-autocompletesearch--focus');
     searchBar.classList.remove('sc-autocompletesearchbar--open', 'sc-autocompletesearchbar--focus');
     openButton.style.display = 'flex';
