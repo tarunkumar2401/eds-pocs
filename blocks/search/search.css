@@ -1,0 +1,245 @@
+/* Search Block - Norton Autocomplete Style */
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Autocomplete Search Container */
+.c-autocompletesearch {
+  position: relative;
+  width: 100%;
+}
+
+/* Status message (screen reader only) */
+.c-autocompletesearch__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Search Bar Container */
+.sc-autocompletesearchbar {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  background-color: #fff;
+  border-radius: 6px;
+  height: 50px;
+  outline: 2px solid transparent;
+  transition: all 0.3s ease;
+  width: auto;
+}
+
+.sc-autocompletesearchbar--open {
+  outline: 2px solid #242424;
+  width: 320px;
+}
+
+.sc-autocompletesearchbar--focus:focus-within,
+.sc-autocompletesearchbar--open:focus-within {
+  outline-color: #0f71f0;
+}
+
+.sc-autocompletesearchbar--focus {
+  outline-color: #0f71f0;
+}
+
+@media only screen and (min-width: 1330px) {
+  .sc-autocompletesearchbar--open {
+    width: 540px;
+  }
+}
+
+/* Search Buttons */
+.sc-autocompletesearchbar__btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  outline: none;
+}
+
+.sc-autocompletesearchbar__btn:hover {
+  opacity: 0.7;
+}
+
+.sc-autocompletesearchbar__btn[data-action="close"] {
+  display: none;
+  padding: 12px;
+}
+
+/* Search Icon */
+.sc-autocompletesearchbar__icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Close Icon */
+.sc-autocompletesearchbar__btn .close-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: block;
+}
+
+/* Search Label */
+.sc-autocompletesearchbar__label {
+  position: absolute;
+  left: 16px;
+  top: 6px;
+  font-size: 11px;
+  color: transparent;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  white-space: nowrap;
+}
+
+.sc-autocompletesearchbar--open .sc-autocompletesearchbar__label {
+  color: #242424;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sc-autocompletesearchbar--focus .sc-autocompletesearchbar__label {
+  color: #0f71f0;
+}
+
+/* Search Input */
+.sc-autocompletesearchbar__text-input {
+  display: none;
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 24px 0 4px 16px;
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  background: transparent;
+  width: 0;
+  min-width: 0;
+}
+
+.sc-autocompletesearchbar--open .sc-autocompletesearchbar__text-input {
+  width: 100%;
+}
+
+.sc-autocompletesearchbar__text-input::placeholder {
+  color: #999;
+}
+
+/* Remove default search input styling */
+.sc-autocompletesearchbar__text-input::-webkit-search-cancel-button,
+.sc-autocompletesearchbar__text-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Autocomplete Results */
+.sc-autocompletesearchresult {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 2px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 10000;
+}
+
+.sc-autocompletesearchresult--hidden {
+  display: none;
+}
+
+.sc-autocompletesearchresult [role="option"] {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sc-autocompletesearchresult [role="option"]:last-child {
+  border-bottom: none;
+}
+
+.sc-autocompletesearchresult [role="option"]:hover,
+.sc-autocompletesearchresult [role="option"].focused {
+  background-color: #f5f5f5;
+}
+
+.sc-autocompletesearchresult [role="option"][aria-selected="true"] {
+  background-color: #e8f4ff;
+}
+
+.sc-autocompletesearchresult [role="option"][aria-disabled="true"] {
+  cursor: default;
+  color: #999;
+  text-align: center;
+}
+
+.sc-autocompletesearchresult [role="option"][aria-disabled="true"]:hover {
+  background-color: transparent;
+}
+
+/* Search Result Item Styling */
+.search-result-item {
+  display: block;
+}
+
+.search-result-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #242424;
+  line-height: 1.4;
+}
+
+/* Focus Styles */
+.sc-autocompletesearchbar__btn:focus-visible {
+  outline: 2px solid #ffa500;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sc-autocompletesearchbar__text-input:focus {
+  outline: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1329px) {
+  .sc-autocompletesearchbar--open {
+    width: 320px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sc-autocompletesearchbar--open {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: calc(100% - 32px);
+  }
+}
