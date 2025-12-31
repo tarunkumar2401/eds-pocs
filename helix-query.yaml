@@ -4,6 +4,7 @@ indices:
     include:
       - /**
     target: /query-index.json
+    script: /scripts/index.js
     properties:
       title:
         select: head > meta[property="og:title"]
