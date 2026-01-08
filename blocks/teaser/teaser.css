@@ -1,0 +1,248 @@
+/* Teaser Block Styles */
+main > .section > div.teaser-wrapper {
+  margin: 6rem auto;
+}
+
+.teaser {
+  max-width: var(--max-width, 1300px);
+  margin: auto;  
+}
+
+/* Base text styles - must come before modifier selectors */
+.teaser-title {
+  margin-bottom: 0.75rem;
+}
+
+.teaser-title h3 {
+  font-size: 1.75rem;
+  line-height: 2.375rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.teaser-pretitle {
+  font-size: 1rem;
+  line-height: 1.5rem;
+} 
+
+.teaser-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.teaser-cta {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+a.button.teaser-cta:any-link {
+  min-width: 164px;
+}
+
+/* Side-by-side layout */
+.teaser.teaser-sidebyside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.teaser.teaser-sidebyside .teaser-image {
+  flex: 1;
+  width: 100%;
+}
+
+.teaser.teaser-sidebyside .teaser-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.teaser.teaser-sidebyside .teaser-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color);
+  flex-basis: 40%;
+}
+
+.teaser.teaser-sidebyside.image-right .teaser-content {
+  order: 2;
+}
+
+.teaser.teaser-sidebyside .teaser-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.teaser.teaser-sidebyside .teaser-title {
+  color: var(--heading-color, #111);
+}
+
+.teaser.teaser-sidebyside .teaser-description {
+  color: var(--text-color, #555);
+}
+
+.teaser.teaser-sidebyside .teaser-cta {
+  align-self: flex-start;
+}
+
+/* Background layout */
+.teaser.teaser-background {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.teaser.teaser-background .teaser-background-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 235px;
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+.teaser.teaser-background .teaser-content {
+  padding: 2rem;
+  color: var(--text-color);
+  border-radius: 16px 16px 0 0;
+  background-color: rgb(215, 215, 217);
+}
+
+.teaser.teaser-background .teaser-title h2 {
+  font-size: 1.75rem;
+  line-height: 2.375rem;
+  margin: 0;
+}
+
+.teaser.teaser-background .teaser-content p { 
+  margin: 0;
+}
+
+.teaser.teaser-background .teaser-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+}
+
+.teaser-container .default-content-wrapper h2 {
+  text-align: center;
+  font-size: 32px;
+  line-height: 38px;
+  font-family: Inter, BlinkMacSystemFont, Tahoma, Roboto, Verdana, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+/* Tablet and Desktop - Side by side layout */
+@media (width >= 768px) {
+  .teaser.teaser-sidebyside .teaser-text {
+    font-size: 1.25rem;
+  }
+
+  .teaser.teaser-background {
+    min-height: 500px;
+  }
+
+  .teaser.teaser-background .teaser-background-image {
+    min-height: 500px;
+  }
+
+  .teaser.teaser-background .teaser-text {
+    font-size: 2rem;
+  }
+
+  .teaser-container .default-content-wrapper h2 {
+      font-size: 52px;
+      line-height: 56px;
+      margin: 48px 0;
+    }
+}
+
+@media (width >= 1024px) {
+
+  .teaser {
+    width: 100%;
+  }
+
+  .teaser-title, .teaser-pretitle, .teaser-description {
+    padding-left: 3rem;
+  }
+
+  .teaser-title h3 {
+    font-size: 2.75rem;
+    line-height: 1.27;
+  }
+
+  .teaser-pretitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  } 
+
+  .teaser.teaser-sidebyside {
+    flex-direction: row;
+  }
+
+  .teaser.teaser-sidebyside.image-right .teaser-image {
+    order: 2;
+  }
+
+  a.button.teaser-cta:any-link {
+    margin-left: 3rem;
+  }
+
+  .teaser.teaser-sidebyside .teaser-image,
+  .teaser.teaser-sidebyside .teaser-content {
+    width: 50%;
+  }
+  .teaser.teaser-sidebyside .teaser-content {
+    padding: 2rem;
+  }
+
+  .teaser.teaser-background {
+    min-height: 600px;
+  }
+
+  .teaser.teaser-background .teaser-background-image {
+    min-height: 600px;
+    background-position: center;
+  }
+
+  .teaser.teaser-background .teaser-text {
+    font-size: 2.5rem;
+  }
+
+  .teaser.teaser-background .teaser-content {
+    max-width: 450px;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    flex-direction: column;
+    background-color: transparent;
+  }
+
+  .teaser.teaser-background .teaser-title h2 {
+    font-size: 2.75rem;
+    line-height: 1.27;
+  }
+}
+
+@media (width < 768px) {
+  .teaser-container .default-content-wrapper h2 {
+      margin: 40px 0;
+    }
+}

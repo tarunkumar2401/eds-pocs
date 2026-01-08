@@ -1,0 +1,76 @@
+.c-alert-banner {
+  font-size: 14px;
+}
+
+.c-alert-banner__wrapper {
+  width: 100%;
+  background-color: #ffeb3b;
+  margin-bottom: 10px;
+}
+
+.c-alert-banner__wrapper__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 5px 5% 5px 21px;
+  gap: 50px;
+}
+
+.c-alert-banner__wrapper__container__text {
+  max-width: 1200px;
+  color: #1b1b1b;
+}
+
+.c-alert-banner__wrapper__container__text p {
+  margin: 0;
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.c-alert-banner__wrapper__container__close {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.c-alert-banner__wrapper__container__close::before,
+.c-alert-banner__wrapper__container__close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 2px;
+  background: #1b1b1b;
+}
+
+.c-alert-banner__wrapper__container__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.c-alert-banner__wrapper__container__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+main > .section > .alertbanner-wrapper {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+@media (width >= 768px) {
+  .c-alert-banner__wrapper__container  {
+    padding: 0 122px;
+    gap: unset;
+  }
+  .c-alert-banner__wrapper__container__text p {
+    line-height: 32px;
+    font-size: 20px;
+  }
+  .c-alert-banner__wrapper__container__close {
+    position: absolute;
+    right: 50px;
+  }
+}

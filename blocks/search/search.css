@@ -1,17 +1,14 @@
-/* Search Block - Norton Autocomplete Style */
 .search {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-/* Autocomplete Search Container */
 .c-autocompletesearch {
   position: relative;
   width: 100%;
 }
 
-/* Status message (screen reader only) */
 .c-autocompletesearch__status {
   position: absolute;
   width: 1px;
@@ -24,7 +21,6 @@
   border: 0;
 }
 
-/* Search Bar Container */
 .sc-autocompletesearchbar {
   display: inline-flex;
   flex-direction: row;
@@ -59,7 +55,6 @@
   }
 }
 
-/* Search Buttons */
 .sc-autocompletesearchbar__btn {
   background: transparent;
   border: none;
@@ -81,14 +76,12 @@
   padding: 12px;
 }
 
-/* Search Icon */
-.sc-autocompletesearchbar__icon {
-  width: 24px;
-  height: 24px;
+.sc-autocompletesearchbar__icon{
+  width: 20px;
+  height: 20px;
   display: block;
 }
 
-/* Close Icon */
 .sc-autocompletesearchbar__btn .close-icon {
   width: 20px;
   height: 20px;
@@ -99,7 +92,6 @@
   display: block;
 }
 
-/* Search Label */
 .sc-autocompletesearchbar__label {
   position: absolute;
   left: 16px;
@@ -123,7 +115,6 @@
   color: #0f71f0;
 }
 
-/* Search Input */
 .sc-autocompletesearchbar__text-input {
   display: none;
   flex: 1;
@@ -145,14 +136,12 @@
   color: #999;
 }
 
-/* Remove default search input styling */
 .sc-autocompletesearchbar__text-input::-webkit-search-cancel-button,
 .sc-autocompletesearchbar__text-input::-webkit-search-decoration {
   -webkit-appearance: none;
   appearance: none;
 }
 
-/* Autocomplete Results */
 .sc-autocompletesearchresult {
   position: absolute;
   top: calc(100% + 4px);
@@ -201,7 +190,6 @@
   background-color: transparent;
 }
 
-/* Search Result Item Styling */
 .search-result-item {
   display: block;
 }
@@ -213,7 +201,6 @@
   line-height: 1.4;
 }
 
-/* Focus Styles */
 .sc-autocompletesearchbar__btn:focus-visible {
   outline: 2px solid #ffa500;
   outline-offset: 2px;
@@ -224,7 +211,6 @@
   outline: none;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 1329px) {
   .sc-autocompletesearchbar--open {
     width: 320px;
